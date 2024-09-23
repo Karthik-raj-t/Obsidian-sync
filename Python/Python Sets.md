@@ -1,5 +1,5 @@
+[[Python Data Structures]]
 
-[python]
 - **Definition of Sets**:
     
     - Built-in data structure in Python.
@@ -50,4 +50,17 @@
     
     - Syntax: `set1.issuperset(set2)`
     - Returns `True` if `set1` is a superset of `set2`, meaning all elements of `set2` are contained in `set1`.
-- 
+### Practical Applications
+
+### Removing Duplicates from a List
+
+```python
+unique_elements = set([1, 2, 2, 3, 4, 4, 5])`
+```
+
+### Counting Unique Words in Text
+
+```python
+
+text = "In this tutorial we are discussing about sets" words = text.split() unique_words = set(words) word_count = len(unique_words)`
+```

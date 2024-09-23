@@ -1,70 +1,96 @@
-## Outline
-1. Introduction to Dictionaries
-2. Creating Dictionaries
-3. Accessing Dictionary Elements
-4. Modifying Dictionary Elements
-5. Dictionary Methods
-6. Iterating over Dictionaries
-7. Nested Dictionaries
-8. Dictionary Comprehension
-9. Common Errors
+## Introduction
 
----
-
-## Introduction to Dictionaries
-- **Dictionaries**: An unordered collection of items stored as key-value pairs.
-  - **Keys**: Must be unique and immutable (cannot be changed once defined).
-  - **Values**: Can be of any type and are mutable (can be changed).
-  - Keys can include strings, numbers, or tuples.
-  - Example:
-    ```python
-    student = {"name": "Krish", "age": 32, "grade": "A"}
-    ```
-
----
+Dictionaries are unordered collections of items in Python, storing data in key-value pairs. Keys must be unique and immutable, while values can be of any type.
 
 ## Creating Dictionaries
-1. **Empty Dictionary**:
-   - Using curly braces:
-     ```python
-     empty_dict = {}
-     ```
-   - Using `dict()`:
-     ```python
-     empty_dict = dict()
-     ```
-2. **Dictionary with key-value pairs**:
-   - Example:
-     ```python
-     student = {"name": "Krish", "age": 32, "grade": "A"}
-     ```
 
----
+```python
+empty_dict = {} 
+empty_dict = dict() 
+student = {"name": "Krish", "age": 32, "grade": 24}`
+```
 
 ## Accessing Dictionary Elements
-1. **Access using key**:
-   ```python
-   student["grade"]  # Outputs: 'A'
---```
-  2.**Using `get()` method**:
-	  Safer way to access values (returns `None` if key not found):
-	 
-```
- student.get("grade")  # Outputs: 'A'
-student.get("lastname", "Not available")  # Outputs: 'Not available' else ouput is 'None'
-``````
 
+```python
+print(student['grade']) 
+print(student.get('grade')) 
+print(student.get('last_name', "Not Available"))`
+```
 
 ## Modifying Dictionary Elements
 
-- **Dictionaries are mutable**: We can add, update, or delete elements.
+```python
 
-1. **Update values**:
-    
-    ```python
-	student["age"] = 33   
-	 ```
-**Add new key-value pairs**:
+student["age"] = 33 
+student["address"] = "India"
+del student['grade']` # for deleting the data
+```
+## Dictionary Methods
+```python
 
+keys = student.keys() values = student.values() items = student.items()`
+```
+
+## Shallow Copy vs Deep Copy
+
+```python
+
+student_copy = student  # Shallow copy 
+student_copy1 = student.copy()  # Deep copy
+```
+## Iterating Over Dictionaries
+
+```python
+
+for key in student.keys():    
+	print(key) for value in student.values():   
+	print(value) for key, value in student.items():     
+	print(f"{key}:{value}")
+```
+
+## Nested Dictionaries
+
+```python
+students = {     "student1": {"name": "Krish", "age": 32},    "student2": {"name": "Peter", "age": 35} } 
+print(students["student2"]["name"]) for student_id, student_info in students.items():   print(f"{student_id}:{student_info}")    for key, value in student_info.items():        print(f"{key}:{value}")
+```
+
+## Dictionary Comprehension
+
+```python
+
+squares = {x: x**2 for x in range(5)} 
+evens = {x: x**2 for x in range(10) if x % 2 == 0}
+```
+## Practical Examples
+
+### Counting Frequency
+
+```python
+numbers = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4] 
+frequency = {} for number in numbers:    	
+	if number in frequency:        
+		frequency[number] += 1   
+	else:       
+		frequency[number] = 1
+````
+
+### Merging Dictionaries
+
+```python
+
+dict1 = {"a": 1, "b": 2}
+dict2 = {"b": 3, "c": 4} 
+merged_dict = {**dict1, **dict2}`
+```
+
+## Conclusion
+
+Dictionaries are powerful tools in Python for managing key-value pairs, used in various scenarios like counting word frequency, grouping data, storing configuration settings, managing phonebooks, tracking inventory, and caching results.
+
+--
+
+[[Python Data Structures]] 
 
 
